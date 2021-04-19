@@ -1,0 +1,33 @@
+import random
+import re
+while True:
+    print("CHOOSE ANY ONE OF THEM := R=ROCK, P=PAPER, S=SCISSOR")
+    user_choice = input("choose your weapon, R=ROCK, P=PAPER, S=SCISSOR")
+    print("USER CHOICE:-",user_choice )
+    if not re.match("[SsRrPp]",user_choice):   ## To check a patter whether it is matched or not
+        print("Please Choose a Letter")
+        print("[R]ock,[P]aper or [S]cissor")
+        continue
+    print("You Choose:"+ user_choice)
+    #### Computer Input For the Game
+    
+    choices = ['R','S','P']
+    opponent_choice = random.choice(choices)
+    print("I Choose - "+ opponent_choice)
+    if opponent_choice == str.upper(user_choice):
+        print("Its a Tie!!!")
+        continue
+    elif opponent_choice == 'R' and str.upper(user_choice)=='S':
+        print("Rock Beat Scissor -- I win!!!!")
+        continue
+    elif opponent_choice == 'S' and str.upper(user_choice)=='R':
+        print("Rock Beat Scissor -- You win!!!!")
+        continue
+    elif opponent_choice == 'P' and str.upper(user_choice)=='R':
+        print("Paper Beat Rock -- I win!!!!")
+        continue
+    elif opponent_choice == 'P' and str.upper(user_choice)=='S':
+        print("Scissor Beat paper - - You win!!!!")
+        continue
+    else:
+        print("I Win!!!")
