@@ -1,0 +1,49 @@
+import time
+print("insert your card")
+
+#for card processing
+
+time.sleep(5)
+password=1234
+
+#taking input pin from user
+
+pin=int(input("Enter Your 4 digit pin"))
+
+#User Account balance
+
+balance = 100000
+
+#Checking whether user give correct pin or not
+        
+if pin == password:
+    
+        print("""
+        1==Balance
+        2==Withdraw
+        3==Deposite
+        4==Exist
+        """)
+        
+        try:
+            #take option from user 
+            option = int(input("Enter your choice:"))
+        except:
+            print("enter valid option")
+            
+        #for  option
+        if option == 1:
+            print("your current balance:",balance)
+        elif option == 2:
+            Withdraw_amt = int(input("Please Enter your Withdraw Amt:"))
+            print("Your {} amount debited from your account".format(Withdraw_amt))
+            balance = balance - Withdraw_amt
+        elif option == 3:
+            deposite_amt = int(input("Please Enter your Deposite Amt:"))
+            balance = deposite_amt + balance
+            print(f"your update balance is {balance}")
+        elif option == 4:
+            print("exist")
+else:
+    print("Please re-enter your pin again:")
+            
